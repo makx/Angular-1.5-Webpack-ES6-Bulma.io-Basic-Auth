@@ -1,11 +1,13 @@
 import angular from 'angular';
 
+import template from './app.template.html';
+/**
+ * Main Application
+ */
 export default angular.module('App', [])
 
 .component('app', {
-  controller: function(){
-    console.log(this);
-  },
-  template: '<h1> App hello world',
+  template,
+  controller: () => {},
   controllerAs: 'vm'
 });

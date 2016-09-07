@@ -16,7 +16,7 @@ Antes si estamos con nvm
 
 Habrá que instalarlo en el caso de que no lo tengamos.
 
-`git clone ....``
+`git clone ....`
 
 `npm install`
 
