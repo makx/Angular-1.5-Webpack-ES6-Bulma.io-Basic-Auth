@@ -1,11 +1,9 @@
 import angular from 'angular';
-import uiRouter from 'angular-ui-router';
 
 import template from './login.template.html';
 import controller from './login.controller';
 
 export default angular.module('login.auth', [
-  uiRouter
 ])
 
 /*

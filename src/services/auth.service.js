@@ -1,12 +1,9 @@
 export default class AuthService {
-  constructor(){
+  constructor($http, $q, $cookies){
     var vm = this;
-
-    vm.user = {
-      username: 'nana',
-      password: 'nene'
-    }
-
+    vm.$http = $http;
+    vm.$q = $q;
+    vm.$cookies = $cookies;
   }
 
   getUser() {
@@ -14,19 +11,33 @@ export default class AuthService {
   }
 
   authenticate(user) {
-    this.user = user;
+    var vm = this;
+    if(user) {
+      vm.$cookies.putObject('user', user)
+      vm.user = user;
+      return true;
+    }
+
+    return false;
+
   }
 
-  login(user){
-
+  login(credentias){
+    var vm = this;
+    return vm.$http.post('/login', credentias).then(function(response){
+      return response;
+    }, function(response){
+      return vm.$q.reject(response);
+    });
   }
 
   logout(user){
-
+    this.user = null;
+    this.$cookies.putObject('user', null);
   }
 
   isAuthenticated(){
-
+    return this.user;
   }
 
 }

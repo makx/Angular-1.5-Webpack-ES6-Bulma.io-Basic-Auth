@@ -23,12 +23,12 @@
           <a class="nav-item">
             Documentation
           </a>
-          <span class="nav-item">
-            <a class="button is-primary is-inverted">
+          <span class="nav-item" ng-show="vm.isAuthenticated()">
+            <a class="button is-primary is-inverted" ng-click="vm.logout()">
               <span class="icon">
                 <i class="fa fa-github"></i>
               </span>
-              <span>Download</span>
+              <span>Logout</span>
             </a>
           </span>
         </div>
@@ -38,6 +38,7 @@
 
   <!-- Hero content: will be in the middle -->
   <ng-transclude>
+
   </ng-transclude>
 
   <!-- Hero footer: will stick at the bottom -->

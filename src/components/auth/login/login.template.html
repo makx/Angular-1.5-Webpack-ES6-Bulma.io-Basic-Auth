@@ -1,18 +1,24 @@
-
 <div class="hero-body">
   <div class="container has-text-centered">
-      <article class="card is-rounded">
-        <div class="card-content">
-          <h1 class="title">
-              App ye
-          </h1>
+    <article class="card is-rounded" style="margin: 0 auto;">
+      <div class="card-content">
+        <h1 class="title">
+            App ye
+        </h1>
+        <div class="notification is-danger" ng-show="vm.loginError">
+          <button class="delete" ng-click="vm.loginError = false"></button>
+          Credenciales inválidas. Intente nuevamente
+        </div>
+        <form name="vm.loginForm" autocomplete="off" novalidate ng-submit="vm.login(vm.credentials)">
           <p class="control has-icon">
-            <input class="input" type="email" placeholder="Email">
+            <input class="input" type="text" ng-model="vm.credentials.username" name="username" placeholder="Email" ng-class="{'is-danger': vm.loginForm.$submitted && vm.loginForm.username.$invalid ||vm.loginForm.username.$dirty && vm.loginForm.username.$invalid || vm.errors.notrecognized == true }" required>
             <i class="fa fa-envelope"></i>
+            <span class="help is-danger" ng-show="vm.loginForm.$submitted && vm.loginForm.username.$error">This email is invalid</span>
           </p>
           <p class="control has-icon">
-            <input class="input" type="password" placeholder="Password">
+            <input class="input" type="password" ng-model="vm.credentials.password" name="password" ng-class="{'is-danger': vm.loginForm.$submitted && vm.loginForm.password.$invalid ||vm.loginForm.password.$dirty && vm.loginForm.password.$invalid || vm.errors.notrecognized == true }" placeholder="Password" required>
             <i class="fa fa-lock"></i>
+            <span class="help is-danger" ng-show="vm.loginForm.$submitted && vm.loginForm.username.$error">This password is invalid</span>
           </p>
           <p class="control">
             <label class="checkbox">
@@ -26,7 +32,8 @@
               Login
             </button>
           </p>
-        </div>
-      </article>
-    </div>
+        </form>
+      </div>
+    </article>
   </div>
+</div>
