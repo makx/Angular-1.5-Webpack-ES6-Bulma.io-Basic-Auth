@@ -1,24 +1,19 @@
-# PPS - proyecto #
+# Angular Boilerplate project #
 
 ## Intro ##
 
-Applicación de Front
 
-Proyecto en Javascript + Angular + ES6 + Webpack
+Boilerplate Javascript + Angular 1.5  + ES6 + Webpack
 
-La versión de node 5.12
+Has basic code for auth
 
-## Instalación ##
+## Instalation ##
 
-Antes si estamos con nvm
-
-`nvm use 5.12  (optional)``
-
-Habrá que instalarlo en el caso de que no lo tengamos.
-
-`git clone ....`
+Clone the project.
 
 `npm install`
+
+Install Globally Webpack and the dev server.
 
 `npm install -g webpack webpack-dev-server`
 
