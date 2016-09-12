@@ -1,4 +1,4 @@
-# PPS - proyecto #
+# Angular Boilerplate project #
 
 ## Intro ##
 
